@@ -1,3 +1,3 @@
 module.exports = {
-    title: 'Hello world'
+    pageTitle: 'Handlebars Template'
 };

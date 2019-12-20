@@ -1,7 +1,7 @@
 const rootData = require('./_root');
 
 const data = {
-    'title': 'Home Page2'
+    'title': 'Handlebars Simple Template'
 };
 
 module.exports = Object.assign({}, rootData, data);

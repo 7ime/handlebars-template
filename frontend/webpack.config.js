@@ -43,7 +43,7 @@ const commonPlugins = [
         }
     }),
     new MiniCssExtractPlugin({
-        filename: devMode ? 'main.css' : 'main.[contenthash:8].css'
+        filename: devMode ? 'main.css' : 'main.[hash].css'
     }),
     ...pages.map((pageName) => {
         return new HtmlWebpackPlugin({
@@ -60,7 +60,7 @@ module.exports = {
     context: resolvePath('src'),
     entry: resolvePath('src/js/index.js'),
     output: {
-        filename: devMode ? '[name].bundle.js' : '[name].[contenthash:8].bundle.js',
+        filename: devMode ? '[name].bundle.js' : '[name].[hash].bundle.js',
         path: resolvePath('dist')
     },
     resolve: {
