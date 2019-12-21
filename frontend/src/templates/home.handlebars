@@ -4,5 +4,13 @@
         <h2>{{uppercase (after-before-symbols "good luck" "*" "3")}}</h2>
         <img src="static/images/preloader.svg" style="margin-bottom: 2rem"/>
         <a href="https://webpack.js.org" class="button">Webpack documentation</a>
+
+        {{#list menu}}
+            <a href="{{href}}">{{name}}</a>
+        {{/list}}
+
+        {{#each menu}}
+            <a href="{{href}}">{{name}}</a>
+        {{/each}}
     </div>
 {{> ../partials/footer }}
