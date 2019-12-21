@@ -35,13 +35,6 @@ const prodPlugins = [
 const devPlugins = [];
 
 const commonPlugins = [
-    new webpack.LoaderOptionsPlugin({
-        options: {
-            handlebarsLoader: {
-
-            }
-        }
-    }),
     new MiniCssExtractPlugin({
         filename: devMode ? 'main.css' : 'main.[hash].css'
     }),
@@ -74,7 +67,13 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: [
                     {
-                        loader: "handlebars-loader"
+                        loader: "handlebars-loader",
+                        options: {
+                            helperDirs: resolvePath('src/handlebars-helpers'),
+                            precompileOptions: {
+                                knownHelpersOnly: false,
+                            },
+                        }
                     }
                 ]
             },
